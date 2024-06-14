@@ -1,7 +1,7 @@
 @use 'theme';
 
 .container {
-  max-width: 992px;
+  max-width: 1500px;
   width: 100%;
   margin: 0 auto;
   padding: 0 min(max(5.6vw, 20px), 100px);
@@ -68,6 +68,10 @@
   border-radius: theme.$border-radius;
   text-align: center;
   transition: all .3s ease;
+
+  @media (max-width: theme.$break--sm) {
+    padding: 11px 24px;
+  }
 }
 
 .button--purple {
@@ -84,7 +88,7 @@
 }
 .button--line {
   background-color: transparent;
-  border: 2px solid theme.$color-secundary;
+  outline: 1px solid theme.$color-secundary;
 
   &:hover {
     background-color: theme.$color-secundary;

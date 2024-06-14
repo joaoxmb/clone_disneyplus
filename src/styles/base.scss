@@ -4,6 +4,7 @@
 @use 'modules';
 
 @use '_hero';
+@use '_header';
 
 * {
   padding: 0;
@@ -17,6 +18,7 @@ body {
   font-family: 'Avenir';
   color: theme.$color-primary;
   background-color: theme.$page-background;
+  position: relative;
 }
 
 a {
