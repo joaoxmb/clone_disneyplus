@@ -1,0 +1,101 @@
+@use 'theme';
+
+.container {
+  max-width: 992px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 min(max(5.6vw, 20px), 100px);
+}
+
+// Title
+
+@mixin title($fontSize: theme.$title-size) {
+  font-size: $fontSize;
+  line-height: $fontSize + 10px;
+  font-family: 'Avenir';
+  font-weight: bold;
+  color: theme.$color-secundary;
+}
+
+.title {
+  @include title;
+
+  @media screen and (min-width: theme.$break--bg) {
+    & {
+      @include title(theme.$title-size--bg);
+    }
+  }
+}
+
+// Text
+
+@mixin text($fontSize: theme.$text-size) {
+  font-size: $fontSize;
+  line-height: $fontSize + 10px;
+  font-family: 'Avenir';
+  font-weight: normal;
+  color: theme.$color-primary;
+}
+
+.text {
+  @include text;
+}
+.text--sm {
+  @include text(theme.$text-size--sm);
+}
+.text--bg {
+  @include text(theme.$text-size--bg);
+}
+
+// Link
+
+.link {
+  font-size: theme.$text-size--bg;
+  line-height: theme.$text-size--bg + 10;
+  text-decoration: underline;
+  color: theme.$color-secundary;
+  display: block;
+}
+
+// Button 
+.button {
+  @include title(theme.$text-size);
+  padding: 20px 33px;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: theme.$border-radius;
+  text-align: center;
+  transition: all .3s ease;
+}
+
+.button--purple {
+  background-color: theme.$color-purple;
+  &:hover {
+    background-color: theme.$color-purple--dark;
+  }
+}
+.button--green {
+  background-color: theme.$color-green;
+  &:hover {
+    background-color: theme.$color-green--dark;
+  }
+}
+.button--line {
+  background-color: transparent;
+  border: 2px solid theme.$color-secundary;
+
+  &:hover {
+    background-color: theme.$color-secundary;
+    color: #000000;
+  }
+}
+
+// Margin
+.margin-top--1 {
+  margin-top: 1rem;
+}
+.margin-top--2 {
+  margin-top: 2rem;
+}

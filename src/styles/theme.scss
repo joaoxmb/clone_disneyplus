@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "Avenir";
+  font-weight: normal;
+  src: local("Avenir-Regular"), url(../fonts/Avenir-Regular.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Avenir";
+  font-weight: bold;
+  src: local("Avenir-Bold"), url(../fonts/Avenir-Bold.woff2) format("woff2");
+}
+
+// Color
+$page-background: #040714;
+
+$color-primary: #c0c0c0;
+$color-secundary: #f9f9f9;
+
+$color-purple: #6421ff;
+$color-purple--dark: #551bd8;
+$color-green: #02d6e8;
+$color-green--dark: #03c0d1;
+
+// Text
+$text-size: 16px;
+$text-size--sm: 12px;
+$text-size--bg: 18px;
+
+// Title
+$title-size: 32px;
+$title-size--bg: 44px;
+
+// Breaking Points
+$break--bg: 992px;
+$break--md: 768px;
+$break--sm: 600px;
+
+// Border
+$border-radius: 4px;

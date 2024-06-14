@@ -3,10 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Disney Plus Clone</title>
-  <link rel="stylesheet" href="../dist/styles/main.css">
+  <title>Disney+ Clone</title>
+  <link rel="stylesheet" href="../dist/styles/base.css">
 </head>
 <body>
-  
+  <section class="hero">
+    <div class="hero__content">
+      <div class="container">
+        <img src="./images/disney-logo.png" alt="Disney+" />
+        <h1 class="title margin-top--1">As melhores histórias em um só lugar.</h1>
+        <a class="button button--purple margin-top--1" href="#">
+          Aproveite a oferta combo +
+        </a>
+        <a class="link margin-top--1" href="#">
+          Assinar somente o Disney+
+        </a>
+        <p class="text--sm margin-top--1">
+          A partir de 26/06/24, as assinaturas do Disney+ e Star+ vão migrar para o Disney+ Premium, tendo acesso ao catálogo completo do Star+ e Disney+. Para mais informações sobre planos e preços, acesse <a href="#">disneyplus.com/priceinfo</a>.
+        </p>
+      </div>
+    </div>
+    <picture class="hero__background">
+      <source media="(min-width: 768px)" srcset="./images/hero-bg-tablet-desktop.jpeg" />
+      <img src="./images/hero-bg-mobile.jpeg" alt="Hero Celular" />
+    </picture>
+  </section>
 </body>
 </html>

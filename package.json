@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "live-server & gulp sass"
+    "dev": "live-server & gulp watch"
   },
   "keywords": [],
   "author": "",
@@ -11,6 +11,7 @@
   "description": "",
   "devDependencies": {
     "gulp": "^5.0.0",
+    "gulp-replace": "^1.1.4",
     "gulp-sass": "^5.1.0"
   },
   "dependencies": {
