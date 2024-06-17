@@ -1,6 +1,8 @@
 @use 'theme';
 
 .about {
+  padding: 8rem 0;
+
   & > .container {
     display: grid;
     grid-template-columns: 1fr;
