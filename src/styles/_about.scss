@@ -1,0 +1,30 @@
+@use 'theme';
+
+.about {
+  & > .container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media (min-width: theme.$break--md) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  img {
+    width: 100%;
+    
+    @media (max-width: theme.$break--md) {
+      grid-row: 1;
+    }
+  }
+  
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: theme.$break--md) {
+      grid-row: 2;
+    }
+  }
+}
