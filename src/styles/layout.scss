@@ -1,10 +1,18 @@
 @use 'theme';
 
-.container {
-  max-width: 1500px;
+
+@mixin container($maxWidth) {
+  max-width: $maxWidth;
   width: 100%;
   margin: 0 auto;
   padding: 0 min(max(5.6vw, 20px), 100px);
+}
+
+.container {
+  @include container(1500px);
+}
+.container--md {
+  @include container(1180px);
 }
 
 // Title
@@ -47,6 +55,10 @@
   @include text(theme.$text-size--bg);
 }
 
+.text--center {
+  text-align: center;
+}
+
 // Link
 
 .link {
@@ -65,8 +77,9 @@
   border: none;
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: theme.$border-radius;
   text-align: center;
+  font-weight: normal;
+  border-radius: theme.$border-radius;
   transition: all .3s ease;
 
   @media (max-width: theme.$break--sm) {
@@ -82,6 +95,8 @@
 }
 .button--green {
   background-color: theme.$color-green;
+  color: theme.$page-background;
+
   &:hover {
     background-color: theme.$color-green--dark;
   }

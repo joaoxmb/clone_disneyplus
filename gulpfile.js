@@ -3,7 +3,7 @@ const sass = require("gulp-sass")(require("sass"));
 const replace = require("gulp-replace");
 
 function compileSass() {
-  return gulp.src("./src/styles/base.scss")
+  return gulp.src("./src/styles/**/*.scss")
     .pipe(sass({
       outputStyle: "compressed"
     }))
@@ -22,7 +22,6 @@ exports.index = compileIndex;
 
 exports.build = gulp.parallel(compileSass, compileIndex);
 exports.watch = () => {
-  compileIndex();
   gulp.watch("./src/index.html", { ignoreInitial: false }, gulp.parallel(compileIndex));
-  gulp.watch("./src/styles/*.scss", { ignoreInitial: false }, gulp.parallel(compileSass))
+  gulp.watch("./src/styles/**/*.scss", { ignoreInitial: false }, gulp.parallel(compileSass));
 }

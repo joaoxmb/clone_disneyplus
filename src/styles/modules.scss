@@ -1,0 +1,28 @@
+.icon {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+
+  @mixin Before($imageUrl) {
+    &::before {
+      content: '';
+      background-image: url($imageUrl);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &--correct {
+    @include Before("../images/icon-correct.svg");
+  }
+  &--hyphen {
+    @include Before("../images/icon-hyphen.svg");
+  }
+}
