@@ -9,7 +9,6 @@ function compileSass() {
     .pipe(sass({
       outputStyle: "compressed"
     }))
-    .pipe(replace("../images", "../../src/images"))
     .pipe(dest("./dist/styles"))
 }
 
