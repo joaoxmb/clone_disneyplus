@@ -1,15 +1,17 @@
-
 @use 'theme';
 @use 'layout';
 @use 'modules';
 
-@use '_hero';
-@use '_header';
-@use '_prices';
-@use '_about';
-@use '_gallery';
-@use '_faq';
-@use '_footer';
+// Sections
+@use 'sections/hero';
+@use 'sections/prices';
+@use 'sections/about';
+@use 'sections/gallery';
+@use 'sections/faq';
+
+// Layout
+@use 'layout/header';
+@use 'layout/footer';
 
 * {
   padding: 0;

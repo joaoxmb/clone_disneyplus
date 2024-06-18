@@ -7,7 +7,7 @@ function compileSass() {
     .pipe(sass({
       outputStyle: "compressed"
     }))
-    .pipe(replace("../", "../../src/"))
+    .pipe(replace("../images", "../../src/images"))
     .pipe(gulp.dest("./dist/styles"))
 }
 
