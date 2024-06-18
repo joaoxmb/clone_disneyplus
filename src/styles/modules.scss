@@ -4,7 +4,7 @@
   width: 20px;
   height: 20px;
 
-  @mixin Before($imageUrl) {
+  @mixin Icon($imageUrl) {
     &::before {
       content: '';
       background-image: url($imageUrl);
@@ -20,10 +20,13 @@
   }
 
   &--correct {
-    @include Before("../images/icon-correct.svg");
+    @include Icon("../images/icon-correct.svg");
   }
   &--hyphen {
-    @include Before("../images/icon-hyphen.svg");
+    @include Icon("../images/icon-hyphen.svg");
+  }
+  &--global {
+    @include Icon("../images/icon-global.svg");
   }
 }
 
