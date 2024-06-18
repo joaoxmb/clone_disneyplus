@@ -1,38 +1,43 @@
-const gulp = require("gulp");
+const { watch, src, dest, parallel } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const replace = require("gulp-replace");
 const uglify = require("gulp-uglify");
+const imagemin = require("gulp-imagemin");
 
 function compileSass() {
-  return gulp.src("./src/styles/base.scss")
+  return src("./src/styles/base.scss")
     .pipe(sass({
       outputStyle: "compressed"
     }))
     .pipe(replace("../images", "../../src/images"))
-    .pipe(gulp.dest("./dist/styles"))
+    .pipe(dest("./dist/styles"))
 }
 
 function compileIndex() {
-  return gulp.src("./src/index.html")
-    .pipe(replace("./images", "../src/images"))
+  return src("./src/index.html")
     .pipe(replace("CSS__PATH", "./styles/base.css"))
     .pipe(replace("SCRIPT__PATH", "./scripts/main.js"))
-    .pipe(gulp.dest("./dist"))
+    .pipe(dest("./dist"))
 }
 
-function compileScript() {
-  return gulp.src("./src/scripts/**/*.js")
+function compileScripts() {
+  return src("./src/scripts/**/*.js")
     .pipe(uglify())
-    .pipe(gulp.dest("./dist/scripts"))
+    .pipe(dest("./dist/scripts"))
+}
+
+function compileImages() {
+  return src("./src/images/**/*")
+    .pipe(imagemin())
+    .pipe(dest("dist/images"))
 }
 
 exports.sass = compileSass;
 exports.index = compileIndex;
-exports.script = compileScript;
+exports.script = compileScripts;
+exports.image = compileImages;
 
-exports.build = gulp.parallel(compileSass, compileIndex, compileScript);
+exports.build = parallel(compileSass, compileIndex, compileScripts, compileImages);
 exports.watch = () => {
-  gulp.watch("./src/scripts/**/*.js", { ignoreInitial: false }, gulp.parallel(compileScript));
-  gulp.watch("./src/index.html", { ignoreInitial: false }, gulp.parallel(compileIndex));
-  gulp.watch("./src/styles/**/*.scss", { ignoreInitial: false }, gulp.parallel(compileSass));
+  watch("./src/*", { ignoreInitial: false }, parallel(compileSass, compileIndex, compileScripts, compileImages));
 }
