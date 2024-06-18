@@ -9,10 +9,10 @@
 }
 
 .container {
-  @include container(1500px);
+  @include container(1620px);
 }
 .container--md {
-  @include container(1180px);
+  @include container(1380px);
 }
 
 // Title

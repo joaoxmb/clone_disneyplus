@@ -2,16 +2,15 @@
 
 .hero {
   position: relative;
-  min-height: 70vh;
 
   .container {
-    background-image: url(../images/hero-bg-mobile.jpeg);
+    background-image: url(../images/hero-bg-mobile.png);
     background-size: 100%;
     background-repeat: no-repeat;
     height: 100%;
 
     @media (min-width: theme.$break--md) {
-      background-image: url(../images//hero-bg-tablet-desktop.jpeg);
+      background-image: url(../images//hero-bg-tablet-desktop.png);
       background-position: 0;
     }
   }
