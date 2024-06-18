@@ -14,6 +14,7 @@ function compileSass() {
 function compileIndex() {
   return gulp.src("./src/index.html")
     .pipe(replace("./images", "../src/images"))
+    .pipe(replace("./scripts", "../src/scripts"))
     .pipe(gulp.dest("./dist"))
 }
 
